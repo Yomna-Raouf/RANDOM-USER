@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Spinner from "react-spinkit";
 import './App.css';
-import spinner from 'react-spinkit';
 
 function App() {
 
@@ -10,7 +9,7 @@ function App() {
     email: "abc",
     gender: "abc",
     phone: "abc",
-    picture: { meduim: "" },
+    picture: { large: "" },
   });
 
   useEffect( () => {
@@ -24,7 +23,6 @@ function App() {
       } else {
         alert('HTTP-Eroor' + response.status);
       }
-
     };
 
     fetchData();
@@ -37,7 +35,7 @@ function App() {
     email,
     gender,
     phone,
-    picture: { meduim:profilePicUrl },
+    picture: { large:profilePicUrl },
   } = user;
 
   return (
@@ -46,14 +44,18 @@ function App() {
         <Spinner name="pacman" fadeIn="none" />
       ) : (
         <div className="app_container">
-           <h1>Random user generator</h1>
-          <img src={profilePicUrl} alt="profile picture"/>
+          <div className="app_container_heading">
+            <h1>Random user generator</h1>
+          </div>
+          <div className="app_container_Content"> 
+          <img className= "app_container_image" src={profilePicUrl} alt="profile pic"/>
           <h2>
-            {firstName} {lastName}
+            {title}.  {firstName} {lastName}
           </h2>
-          <h3> Email: {email}</h3>
-          <h3> phone: {phone}</h3>
-          <h4> Gender: {gender}</h4>
+          <h3> Email: {email} </h3>
+          <h3> phone: {phone} </h3>
+          <h4> Gender: {gender} </h4>
+          </div>
         </div>
       )}
     </div>
