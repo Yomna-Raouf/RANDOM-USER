@@ -41,7 +41,7 @@ function App() {
   return (
     <div className="app">
       {!profilePicUrl ? (
-        <Spinner name="pacman" fadeIn="none" />
+        <Spinner name="folding-cube" fadeIn="none" color = '#0c7cb8' />
       ) : (
         <div className="app_container">
           <div className="app_container_heading">
